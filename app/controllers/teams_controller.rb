@@ -37,3 +37,5 @@ class TeamsController < ActionController::Base
 
   def team_params
     params.require(:team).permit(:name, :logo, :sport, :founded, :location)
+  end
+end

@@ -1,1 +1,11 @@
-teams.html
+
+<h2>{{vm.name}}</h2>
+
+
+
+<ul>
+  <li ng-repeat="team in vm.teams track by team.id">{{ team.name }}, {{ team.sport }}, {{ team.location }}</li>
+
+</ul>
+
+<div ng-include="'teams/new.html'"></div>

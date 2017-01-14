@@ -23,13 +23,6 @@
             $urlRouterProvider
                 .otherwise('/')
 
-            // remove # from url Routes
-            // $locationProvider
-            //     .html5Mode({
-            //         enabled: true,
-            //         requireBase: true
-            //     })
 
-        }]);
-
+               })
 }());
