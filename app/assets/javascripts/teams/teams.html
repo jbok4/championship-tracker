@@ -4,7 +4,7 @@
 
 
 <ul>
-  <li ng-repeat="team in vm.teams track by team.id">{{ team.name }}, {{ team.sport }}, {{ team.location }}</li>
+  <li ng-repeat="team in vm.teams track by team.id"><strong>{{ team.name }}</strong> {{ team.location }} | {{ team.sport }}</li>
 
 </ul>
 
