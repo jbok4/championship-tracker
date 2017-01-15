@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170114194225) do
+ActiveRecord::Schema.define(version: 20170115143311) do
+
+  create_table "awards", force: :cascade do |t|
+    t.string  "title"
+    t.integer "year"
+    t.string  "content"
+    t.integer "team_id"
+  end
 
   create_table "teams", force: :cascade do |t|
     t.string "name"

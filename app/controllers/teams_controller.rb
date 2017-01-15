@@ -16,6 +16,7 @@ class TeamsController < ActionController::Base
 
   def show
     team = Team.find_by_id(params[:id])
+    @awards = Award.where(team_id: team.id).order("created_at DESC")
     render json: team
   end
 
