@@ -12,20 +12,21 @@
  *
  *= require_tree .
  *= require_self
+
  */
 
 
 body {
 
 
-background: #ffd89b; /* fallback for old browsers */
-background: -webkit-linear-gradient(to left, #ffd89b , #19547b); /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to left, #ffd89b , #19547b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background: #606c88; /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #606c88 , #3f4c6b); /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #606c88 , #3f4c6b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
         
 }
 
 h2 {
-  color: white; 
+  color: #ddd; 
   font-family: 'Open Sans Condensed', sans-serif; 
   font-size: 34px; 
   font-weight: 400; 
@@ -36,18 +37,17 @@ h2 {
 }
 
 h3 {
-  color: #ffd89b;
-  font-weight: 105;
+  color: #ddd;
+  font-weight: 100;
 }
 
 strong {
-  color: #ffd89b;
-}
-
-li {
   color: white;
 }
 
+li {
+  color: #ccc;
+}
 
 .well.well-sm {
   background-color: rgba(255,255,255,.15);
@@ -55,7 +55,7 @@ li {
 }
 
 p {
-  color: white; 
+  color: #ccc; 
   font-family: 'Open Sans Condensed', sans-serif;  
   font-weight: 100; 
 }

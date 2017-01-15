@@ -13,7 +13,7 @@
                     controller: 'HomeController as vm'
                 })
                 .state('home.teams', {
-                    url: '/teams',
+                    url: 'teams',
                     templateUrl: 'teams/teams.html',
                     controller: 'TeamsController as vm'
                 });
