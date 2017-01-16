@@ -5,10 +5,10 @@
     
     var vm = this;
     vm.name = "Current Teams";
-    vm.getTeam = getTeam;
+    vm.getTeams = getTeams;
+    vm.getAwards = getAwards;
     vm.createTeam = createTeam;
-    vm.updateTeam = updateTeam;
-    vm.deleteTeam = deleteTeam;
+    vm.createAward = createAward;
     
     // instantiated info
     activate();
@@ -24,7 +24,7 @@
               .then(setTeams)
     }
 
-    function getTeam() {
+    function getAwards() {
 
     }
 
@@ -33,13 +33,11 @@
             .then(getTeams)
     }
 
-    function updateTeam() {
-
+    function createAward() {
+      return TeamFactory.createAward(vm.newTeam)
+            .then(getTeams)
     }
 
-    function deleteTeam() {
-
-    }
 
     function setTeams(data) {
       return vm.teams = data;

@@ -5,10 +5,9 @@
   function TeamFactory($http) {
       return {
         getTeams: getTeams,
-        getTeam: getTeam,
+        getAwards: getAwards,
         createTeam: createTeam,
-        updateTeam: updateTeam,
-        deleteTeam: deleteTeam
+        createAward: createAward
       }
 
       function getTeams() {
@@ -17,9 +16,21 @@
                     .catch(handleError);
       }
 
-      function getTeam() {
 
-      }
+      function getAwards(team_id) {
+        var url = `/teams/${team_id}/awards`
+        var req = {
+          method: 'GET',
+          url: url,
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        }
+
+      return $http(req)
+                  .then(handleResponse)
+                  .catch(handleError)
+    }
 
       function createTeam(team) {
           var req = {
@@ -36,13 +47,23 @@
                 .catch(handleError)
       }
 
-      function updateTeam() {
-
+      function createAward(award, team_id) {
+      var url = `/teams/${team_id}/awards`
+      var req = {
+        method: 'POST',
+        url: url,
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        data: {
+          award: award
+        }
       }
 
-      function deleteTeam() {
-
-      }
+      return $http(req)
+              .then(handleResponse)
+              .catch(handleError)
+    }
 
       function handleResponse(response) {
           return response.data

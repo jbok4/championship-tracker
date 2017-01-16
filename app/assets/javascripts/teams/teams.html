@@ -1,10 +1,10 @@
 
 <h2>{{vm.name}}</h2>
 
-
+<input type="text" ng-model="search"></input>
 
 <ul>
-  <li ng-repeat="team in vm.teams track by team.id"><strong>{{ team.name }}</strong> {{ team.location }} | {{ team.sport }}</li>
+  <li ng-repeat="team in vm.teams track by team.id | filter: search"><strong>{{ team.name }}</strong> {{ team.location }} | {{ team.sport }}</li>
 
 </ul>
 
