@@ -3,12 +3,22 @@
 To run project, download the repo from git
 
 in terminal, type:
-# rake bower:install
+**bundle install**
+
+**rake bower:install**
 to install bootstrap, angular-ui-router, and a few other gems necessary for it to run properly.
 
 then type
-# rake db:migrate 
+**rake db:migrate** 
 to get the database up and running
+
+and finally 
+
+**rails s**
+to start the localhost server. 
+Then head over to 
+**localhost:3000** 
+in your browser to begin interacting with the app!
 
 This app uses 'rails', '~> 5.0.1' and angular 
 
