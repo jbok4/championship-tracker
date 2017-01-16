@@ -3,9 +3,12 @@
 
 
 <ul>
-  <li ng-repeat="team in vm.teams track by team.id">
+  <li ng-repeat="team in vm.teams | orderBy : 'name'">
+  
+   
+  <a href="#" ui-sref="home.showTeam({ id: team.id })"><strong>{{ team.name }}</strong></a>
 
-  <a href="#" ui-sref="home.showTeam({ id: team.id })">{{ team.name }}</a> {{ team.location }} | {{ team.sport }}</li>
+  {{ team.location }} | {{ team.sport }}</li>
 
 </ul>
 

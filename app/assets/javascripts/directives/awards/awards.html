@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-xs-12">
-    <div class="item" ng-repeat="award in awards">
+    <div class="item" ng-repeat="award in awards | orderBy : '-year'">
       
       <div class="col-md-12">
         <h3>{{ award.title }}, {{ award.year }}</h3>

@@ -56,4 +56,14 @@ p {
   /*font-weight: 100;*/ 
 }
 
+.image-size {
+  width: 200px;
+}
+
+.image-size img {
+  width: 100%;
+  height: auto;
+}
+
+
 
