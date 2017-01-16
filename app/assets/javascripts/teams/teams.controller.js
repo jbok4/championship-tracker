@@ -52,6 +52,8 @@
 
     function setTeams(data) {
       return vm.teams = data;
+      // vm.form.$setPristine();
+      // vm.form.$setUntouched();
     }
 
     function setAwards(data) {
