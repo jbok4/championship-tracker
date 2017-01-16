@@ -1,9 +1,13 @@
+<div class="col-md-4 offset-md-6">
+  <input type="text" placeholder="search" ng-model="search"></input>
+</div>
+
+<div class="col-sm-12">
 
 <h2>{{vm.name}}</h2>
 
-
 <ul>
-  <li ng-repeat="team in vm.teams | orderBy : 'name'">
+  <li ng-repeat="team in vm.teams | orderBy : 'name' | filter: search">
   
    
   <a href="#" ui-sref="home.showTeam({ id: team.id })"><strong>{{ team.name }}</strong></a>
@@ -11,5 +15,6 @@
   {{ team.location }} | {{ team.sport }}</li>
 
 </ul>
+</div>
 
 <div ng-include="'teams/new.html'"></div>
