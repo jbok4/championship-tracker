@@ -2,9 +2,9 @@
 
   <form ng-submit="vm.createAward()" class="well well-sm col-md-6">
       <div class="field">
-        <input type="text" class="form-control" placeholder="Award Name"  ng-model="vm.award.title"></input><br>
-        <input type="text" class="form-control" placeholder="Year Won"  ng-model="vm.award.year"></input><br>
-        <textarea class="form-control" placeholder="Description"  ng-model="vm.award.content"></textarea><br>
+        <input type="text" class="form-control" placeholder="Award Name"  ng-model="vm.award.title" required></input><br>
+        <input type="text" class="form-control" placeholder="Year Won"  ng-model="vm.award.year" required></input><br>
+        <textarea class="form-control" placeholder="Description"  ng-model="vm.award.content" required></textarea><br>
       </div>
 
       <button class="btn-danger" type="submit">Add To List</button>

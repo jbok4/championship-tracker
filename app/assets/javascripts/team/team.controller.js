@@ -32,8 +32,6 @@
       vm.team.awards.push(data);
       getAwards();
       vm.award = {};
-      vm.form.$setPristine();
-      vm.form.$setUntouched();
       return vm.awards.push(data);
     }
 
