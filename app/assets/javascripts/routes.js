@@ -26,6 +26,11 @@
                           return $http.get('/teams/' + $stateParams.id);
                         }
                     }
+                })
+                .state('home.about', {
+                    url: 'about',
+                    templateUrl: 'about/about.html',
+                    controller: 'AboutController as vm'
                 });
 
 
