@@ -34,8 +34,9 @@ h2 {
 }
 
 h3 {
-  color: #ddd;
-  font-weight: 100;
+  color: white;
+  font-weight: 200;
+  /*text-transform: uppercase;*/
 }
 
 strong {
@@ -48,7 +49,7 @@ li {
 
 .well.well-sm {
   background-color: rgba(255,255,255,.15);
-    border: 1px solid #555;
+    border: 0px solid #555;
 }
 
 p {
@@ -76,15 +77,16 @@ p {
 }
 
 .navbar-default {
-    background-color: white;
-    opacity: .3;
+    background-color: orange;
+    border: 0;
+    border-radius: 0;
 }
 
 .navbar-default .navbar-brand {
     color: black;
 }
 
-
+/*table settings*/
 .table {
     width: 100%;
     max-width: 100%;
@@ -98,16 +100,36 @@ table p {
   color: black;
 }
 
-footer p {
-  color: black;
-}
-
 table strong {
   color: black;
 }
 
-.footer{width:100%; float:left; background:white; height:50px;}
+/*footer settings*/
+footer p {
+  color: black;
+}
 
+.container {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -80px; 
+}
+.container:after {
+  content: "";
+  display: block;
+}
+.site-footer, .container:after {
+  height: 80px; 
+}
+.site-footer {
+  background: orange;
+}
+
+footer p {
+    color: black;
+    margin-top: 20px;
+    text-align: right;
+}
 
 /*ribbon*/
 button {
