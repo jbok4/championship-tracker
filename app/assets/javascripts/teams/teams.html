@@ -14,7 +14,7 @@
         <img ng-src="{{ team.logo }}" alt="{{ team.name }}">
       </td>
       <td>
-      <a href="#" ui-sref="home.showTeam({ id: team.id })"><strong>{{ team.name }}</strong></a><br>
+      <a href="#" ui-sref="home.showTeam({ id: team.id })"><strong>{{ team.name | uppercase }}</strong></a><br>
       <p>{{ team.location }}<br>{{ team.sport }}</p>
       
       </td>

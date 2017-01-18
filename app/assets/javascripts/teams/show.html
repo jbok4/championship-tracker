@@ -3,7 +3,7 @@
     <img ng-src="{{ vm.team.logo }}" alt="{{ vm.team.name }} Logo" />
   </div>
 <div class="col-md-8">
-<h2>{{ vm.team.name }}</h2>
+<h2>{{ vm.team.name | uppercase }}</h2>
 
 <p>{{ vm.team.location }} | {{ vm.team.sport }}</p>
 </div>
