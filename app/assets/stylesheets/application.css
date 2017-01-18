@@ -71,6 +71,15 @@ p {
   width: 100px;
 }
 
+.image-medium {
+  height: 200px;
+}
+
+.image-medium img {
+  height: 100%;
+  width: auto;
+  
+}
 .image-small img {
   width: 100%;
   height: auto;
