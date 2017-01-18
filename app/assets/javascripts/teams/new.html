@@ -1,12 +1,12 @@
 <h3>Add Another Team</h3>
 
-<form ng-submit="vm.createTeam()" class="well well-sm col-md-6">
+<form name="teamForm" ng-submit="vm.createTeam()" class="well well-sm col-md-6">
 
   <input type="text" class="form-control" placeholder="Name"  ng-model="vm.newTeam.name" required></input><br>
   <input type="text" class="form-control" placeholder="Sport"  ng-model="vm.newTeam.sport" required></input><br>
   <input type="text" class="form-control" placeholder="Logo URL"  ng-model="vm.newTeam.logo"></input><br>
   <input type="text" class="form-control" placeholder="Current Location"  ng-model="vm.newTeam.location" required></input><br>
 
-  <input type="submit" class="btn-danger" value="Create Team">
-
+  <!-- <input type="submit" class="btn btn-danger" value="Create Team"> -->
+  <button class="btn btn-info ribbon" type="submit" value="Submit">Create A New Team</button>
 </form>

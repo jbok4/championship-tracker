@@ -7,8 +7,20 @@
   <div class="col-sm-6">
 
     <h2>{{vm.name}}</h2>
+<table class="table">
 
-    <ul>
+  <tr ng-repeat="team in vm.teams | orderBy : 'name' | filter: search">
+      <td class="image-small">
+        <img ng-src="{{ team.logo }}" alt="{{ team.name }}">
+      </td>
+      <td>
+      <a href="#" ui-sref="home.showTeam({ id: team.id })"><strong>{{ team.name }}</strong></a><br>
+      <p>{{ team.location }}<br>{{ team.sport }}</p>
+      
+      </td>
+  </tr>
+</table>
+<!--     <ul>
       <li ng-repeat="team in vm.teams | orderBy : 'name' | filter: search">
       
        
@@ -16,9 +28,9 @@
 
       {{ team.location }} | {{ team.sport }}</li>
 
-    </ul>
+    </ul> -->
   </div>
-</div>
-<div class="row">
-  <div class="col-sm-10" ng-include="'teams/new.html'"></div>
+<!-- </div> -->
+<!-- <div class="row"> -->
+  <div class="col-sm-6" ng-include="'teams/new.html'"></div>
 </div>

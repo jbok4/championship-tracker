@@ -30,6 +30,8 @@
     }
 
     function setTeams(data) {
+      // vm.teamForm.$setPristine();
+      // vm.teamForm.$setUntouched();
       return vm.teams = data;
     }
 
