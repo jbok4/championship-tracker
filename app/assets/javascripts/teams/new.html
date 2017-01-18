@@ -1,11 +1,24 @@
 <h3>Add Another Team</h3>
 
-<form ng-submit="vm.createTeam()" class="well well-sm col-md-6">
+<form name="form" ng-submit="vm.createTeam()" class="well well-sm col-md-6">
 
-  <input type="text" class="form-control" placeholder="Team Name (Must Be Unique)"  ng-model="vm.newTeam.name" required></input><br>
-  <input type="text" class="form-control" placeholder="Sport"  ng-model="vm.newTeam.sport" required></input><br>
+  <input type="text" name="name" required="required" class="form-control" placeholder="Team Name"  ng-model="vm.newTeam.name" required></input>
+
+  <div ng-if="form.name.$touched && form.name.$error.required">
+        <p class="red">Team Name is required and must be unique!</p>
+    </div><br>
+
+  <input type="text"  name="sport" class="form-control" placeholder="Sport"  ng-model="vm.newTeam.sport" required="required"></input>
+  <div ng-if="form.sport.$touched && form.sport.$error.required">
+        <p class="red">Sport is required!</p>
+  </div><br>
+
   <input type="text" class="form-control" placeholder="Logo URL"  ng-model="vm.newTeam.logo"></input><br>
-  <input type="text" class="form-control" placeholder="Current Location"  ng-model="vm.newTeam.location" required></input><br>
+
+  <input type="text" name="location" class="form-control" placeholder="Current Location"  ng-model="vm.newTeam.location" required="required"></input>
+  <div ng-if="form.location.$touched && form.location.$error.required">
+         <p class="red">Location is required!</p>
+   </div><br>
 
   <!-- <input type="submit" class="btn btn-danger" value="Create Team"> -->
   <button class="btn btn-info ribbon" type="submit" value="Submit">Create A New Team</button>
