@@ -1,20 +1,24 @@
-<div class="col-md-4 offset-md-6">
-  <input type="text" placeholder="search" ng-model="search"></input>
+<div class="row">
+  <div class="col-md-4">
+    <input type="text" placeholder="search" ng-model="search"></input>
+  </div>
 </div>
+<div class="row">
+  <div class="col-sm-6">
 
-<div class="col-sm-12">
+    <h2>{{vm.name}}</h2>
 
-<h2>{{vm.name}}</h2>
+    <ul>
+      <li ng-repeat="team in vm.teams | orderBy : 'name' | filter: search">
+      
+       
+      <a href="#" ui-sref="home.showTeam({ id: team.id })"><strong>{{ team.name }}</strong></a>
 
-<ul>
-  <li ng-repeat="team in vm.teams | orderBy : 'name' | filter: search">
-  
-   
-  <a href="#" ui-sref="home.showTeam({ id: team.id })"><strong>{{ team.name }}</strong></a>
+      {{ team.location }} | {{ team.sport }}</li>
 
-  {{ team.location }} | {{ team.sport }}</li>
-
-</ul>
+    </ul>
+  </div>
 </div>
-
-<div ng-include="'teams/new.html'"></div>
+<div class="row">
+  <div class="col-sm-10" ng-include="'teams/new.html'"></div>
+</div>
