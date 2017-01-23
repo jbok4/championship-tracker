@@ -1,5 +1,20 @@
 <h3>Add Another Team</h3>
 
+<table class="table" ng-hide=!vm.newTeam.name>
+
+  <tr>
+    <td class="image-small">
+      <img ng-src="{{ vm.newTeam.logo }}" alt="{{ vm.newTeam.name }}">
+    </td>
+    <td>
+    <strong>{{ vm.newTeam.name | uppercase }}</strong><br>
+    <p>{{ vm.newTeam.location }}<br>{{ vm.newTeam.sport }}</p>
+    
+    </td>
+  </tr>
+</table>
+
+
 <form name="form" ng-submit="vm.createTeam()" class="well well-sm col-md-6">
 
   <input type="text" name="name" required="required" class="form-control" placeholder="Team Name"  ng-model="vm.newTeam.name" required></input>
