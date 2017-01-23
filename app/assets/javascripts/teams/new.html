@@ -1,6 +1,6 @@
 <h3>Add Another Team</h3>
 
-<table class="table" ng-hide=!vm.newTeam.name>
+<table class="table" ng-hide=!vm.newTeam.logo>
 
   <tr>
     <td class="image-small">
@@ -15,7 +15,7 @@
 </table>
 
 
-<form name="form" ng-submit="vm.createTeam()" class="well well-sm col-md-6">
+<form name="form" ng-submit="form.$valid && vm.createTeam()" class="well well-sm col-md-6" novalidate>
 
   <input type="text" name="name" required="required" class="form-control" placeholder="Team Name"  ng-model="vm.newTeam.name" required></input>
 
@@ -35,6 +35,5 @@
          <p class="red">Location is required!</p>
    </div><br>
 
-  <!-- <input type="submit" class="btn btn-danger" value="Create Team"> -->
   <button class="btn btn-info ribbon" type="submit" value="Submit">Create A New Team</button>
 </form>

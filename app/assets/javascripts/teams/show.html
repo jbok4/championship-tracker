@@ -2,13 +2,12 @@
 <div class="image-size col-md-4">
     <img ng-src="{{ vm.team.logo }}" alt="{{ vm.team.name }} Logo" />
   </div>
-<div class="col-md-8">
-<h2>{{ vm.team.name | uppercase }}</h2>
 
-<p>{{ vm.team.location }} | {{ vm.team.sport }}</p>
+<div class="col-md-8">
+  <h2>{{ vm.team.name | uppercase }}</h2>
+  <p>{{ vm.team.location }} | {{ vm.team.sport }}</p>
 </div>
 
 <awards awards="vm.awards"></awards>
-
 
 <create-award></create-award>
