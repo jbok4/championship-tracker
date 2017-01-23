@@ -7,7 +7,8 @@
         getTeams: getTeams,
         getAwards: getAwards,
         createTeam: createTeam,
-        createAward: createAward
+        createAward: createAward,
+        editAward: editAward
       }
 
       function getTeams() {
@@ -63,6 +64,10 @@
       return $http(req)
               .then(handleResponse)
               .catch(handleError)
+    }
+
+    function editAward() {
+      
     }
 
       function handleResponse(response) {
