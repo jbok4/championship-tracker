@@ -7,6 +7,7 @@
     vm.name = "Current Teams";
     vm.getTeams = getTeams;
     vm.createTeam = createTeam;
+    vm.upVote = upVote;
     // vm.addTeam = addTeam
 
     
@@ -41,7 +42,17 @@
       // vm.teamForm.$setPristine();
       // vm.teamForm.$setUntouched();
       // vm.team = {};
-      return vm.teams = data;
+      vm.teams = data;
+      for (var i = 0; i < vm.teams.length; i++) { 
+      vm.teams[i].upVotes = 0;
+      }
+      // vm.teams.upVotes = 0;
+    }
+
+
+
+    function upVote(team) {
+      team.upVotes++;
     }
 
 
