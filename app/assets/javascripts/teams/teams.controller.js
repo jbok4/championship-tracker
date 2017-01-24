@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  function TeamsController(TeamFactory) {
+  function TeamsController(TeamFactory, $state) {
     
     var vm = this;
     vm.name = "Current Teams";
