@@ -4,7 +4,6 @@
   function CreateAward() {
     return {
       templateUrl: 'directives/awards/create-award.html',
-      transclude: true,
       restrict: 'E'
     };
   }

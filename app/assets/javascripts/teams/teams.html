@@ -3,34 +3,27 @@
     <input type="text" placeholder="search" ng-model="search"></input>
   </div>
 </div>
+
 <div class="row">
   <div class="col-sm-6">
-
     <h2>{{vm.name}}</h2>
-<table class="table">
 
-  <tr ng-repeat="team in vm.teams | orderBy : 'name' | filter: search">
-      <td class="image-small">
-        <img ng-src="{{ team.logo }}" alt="{{ team.name }}">
-      </td>
-      <td>
-      <a href="#" ui-sref="home.showTeam({ id: team.id })"><strong>{{ team.name | uppercase }}</strong></a><br>
-      <p>{{ team.location }}<br>{{ team.sport }}</p>
-      
-      </td>
-  </tr>
-</table>
-<!--     <ul>
-      <li ng-repeat="team in vm.teams | orderBy : 'name' | filter: search">
-      
-       
-      <a href="#" ui-sref="home.showTeam({ id: team.id })"><strong>{{ team.name }}</strong></a>
+    <table class="table">
 
-      {{ team.location }} | {{ team.sport }}</li>
+      <tr ng-repeat="team in vm.teams | orderBy : 'name' | filter: search">
+          <td class="image-small">
+            <img ng-src="{{ team.logo }}" alt="{{ team.name }}">
+          </td>
 
-    </ul> -->
+          <td>
+            <a href="#" ui-sref="home.showTeam({ id: team.id })"><strong>{{ team.name | uppercase }}</strong></a><br>
+            <p>{{ team.location }}<br>{{ team.sport }}</p>
+          </td>
+      </tr>
+    </table>
+
   </div>
-<!-- </div> -->
-<!-- <div class="row"> -->
+
   <div class="col-sm-6" ng-include="'teams/new.html'"></div>
+
 </div>

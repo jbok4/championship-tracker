@@ -1,9 +1,17 @@
 <h3>Add An Award</h3>
 
+  <div class="col-md-12">
+    <h3>{{ vm.award.title }} {{ vm.award.year }}</h3>
+    <p>{{ vm.award.content }}</p>
+  </div>
+
   <form ng-submit="vm.createAward()" class="well well-sm col-md-6">
+      
       <div class="field">
         <input type="text" class="form-control" placeholder="Award Name"  ng-model="vm.award.title" required></input><br>
+
         <input type="text" class="form-control" placeholder="Year Won"  ng-model="vm.award.year" required></input><br>
+        
         <textarea class="form-control" placeholder="Description"  ng-model="vm.award.content" required></textarea><br>
       </div>
 

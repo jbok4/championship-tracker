@@ -7,6 +7,7 @@
     vm.name = "Current Teams";
     vm.getTeams = getTeams;
     vm.createTeam = createTeam;
+    // vm.addTeam = addTeam
 
     
     // instantiated info
@@ -28,6 +29,13 @@
       return TeamFactory.createTeam(vm.newTeam)
                 .then(getTeams)
     }
+
+    // function addTeam(data) {
+    //   vm.teams.push(data);
+    //   getTeams();
+    //   vm.team = {};
+    //   return vm.teams.push(data);
+    // }
 
     function setTeams(data) {
       // vm.teamForm.$setPristine();
