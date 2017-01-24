@@ -9,7 +9,6 @@
         // creates a 2 way binding of the object
         awards: '='
       },
-      transclude: true,
       restrict: 'E'
     };
   }
