@@ -14,12 +14,14 @@
       <tr ng-repeat="team in vm.teams | orderBy : 'name' | filter: search">
           <td class="image-small">
             <img ng-src="{{ team.logo }}" alt="{{ team.name }}">
-            <button class="btn btn-default" ng-click="vm.upVote(team)">{{team.upVotes}} votes</button>
           </td>
 
           <td>
             <a href="#" ui-sref="home.showTeam({ id: team.id })"><strong>{{ team.name | uppercase }}</strong></a><br>
             <p>{{ team.location }}<br>{{ team.sport }}</p>
+          </td>
+          <td>
+            <button class="btn btn-info" ng-click="vm.upVote(team)">{{team.upVotes}} votes</button>
           </td>
       </tr>
     </table>
