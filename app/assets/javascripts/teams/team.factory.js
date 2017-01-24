@@ -7,8 +7,7 @@
         getTeams: getTeams,
         getAwards: getAwards,
         createTeam: createTeam,
-        createAward: createAward,
-        editAward: editAward
+        createAward: createAward
       }
 
       function getTeams() {
@@ -66,9 +65,6 @@
               .catch(handleError)
     }
 
-    function editAward() {
-      
-    }
 
       function handleResponse(response) {
           return response.data
