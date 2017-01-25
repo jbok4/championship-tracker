@@ -31,12 +31,6 @@
                 .then(getTeams)
     }
 
-    // function addTeam(data) {
-    //   vm.teams.push(data);
-    //   getTeams();
-    //   vm.team = {};
-    //   return vm.teams.push(data);
-    // }
 
     function setTeams(data) {
       // vm.teamForm.$setPristine();
@@ -46,7 +40,6 @@
       for (var i = 0; i < vm.teams.length; i++) { 
       vm.teams[i].upVotes = 0;
       }
-      // vm.teams.upVotes = 0;
     }
 
 

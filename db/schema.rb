@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20170125214824) do
     t.string  "sport"
     t.string  "location"
     t.string  "founded"
-    t.integer "upvote"
+    t.integer "upvote",   default: 0
   end
 
 end
