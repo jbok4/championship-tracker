@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170115143311) do
+ActiveRecord::Schema.define(version: 20170125214824) do
 
   create_table "awards", force: :cascade do |t|
     t.string  "title"
@@ -20,11 +20,12 @@ ActiveRecord::Schema.define(version: 20170115143311) do
   end
 
   create_table "teams", force: :cascade do |t|
-    t.string "name"
-    t.string "logo"
-    t.string "sport"
-    t.string "location"
-    t.string "founded"
+    t.string  "name"
+    t.string  "logo"
+    t.string  "sport"
+    t.string  "location"
+    t.string  "founded"
+    t.integer "upvote"
   end
 
 end
