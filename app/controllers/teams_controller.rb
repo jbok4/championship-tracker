@@ -34,7 +34,7 @@ class TeamsController < ActionController::Base
     #! means it also saves it, so saves writing an extra step
     team.increment!(:upvote)
 
-    respond_with team
+    render json: team
   end
 
   def destroy

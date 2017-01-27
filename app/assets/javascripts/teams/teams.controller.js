@@ -46,7 +46,7 @@
 
     function upVote(team) {
       // team.upVotes++;
-      return TeamFactory.upvoteIncrement(team)
+      return TeamFactory.upvoteTeam(team)
     }
 
 

@@ -41,6 +41,10 @@
       });
     }
 
+  //   function incrementUpvotes(){
+  //     return TeamFactory.upvoteTeam(vm.team.id);
+  //   };
+
   }
 
   angular
