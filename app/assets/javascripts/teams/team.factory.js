@@ -7,7 +7,8 @@
         getTeams: getTeams,
         getAwards: getAwards,
         createTeam: createTeam,
-        createAward: createAward
+        createAward: createAward,
+        upvoteIncrement: upvoteIncrement
       }
 
       function getTeams() {
@@ -64,6 +65,21 @@
               .then(handleResponse)
               .catch(handleError)
     }
+
+    function upvoteIncrement(team) {
+          var req = {
+            method: 'PUT',
+            url: '/teams/${team_id}',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            data: {
+              team: team
+            }
+          };
+          return $http(req)
+                .catch(handleError)
+      }
 
 
       function handleResponse(response) {

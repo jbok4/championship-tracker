@@ -4,6 +4,7 @@ root 'application#index'
 
 resources :teams, only: [:index, :show, :create, :update, :destroy] do
   resources :awards, only: [:index, :show, :create, :update, :destroy]
+   put '/upvote' => 'teams#upvote', on: :member
 end
 
 end

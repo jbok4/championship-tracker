@@ -29,6 +29,14 @@ class TeamsController < ActionController::Base
     end
   end
 
+  def upvote
+    team = Team.find(params[:id])
+    #! means it also saves it, so saves writing an extra step
+    team.increment!(:upvote)
+
+    respond_with team
+  end
+
   def destroy
     team = Team.find_by_id(params[:id])
     team.destroy

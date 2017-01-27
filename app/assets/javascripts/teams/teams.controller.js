@@ -37,15 +37,16 @@
       // vm.teamForm.$setUntouched();
       // vm.team = {};
       vm.teams = data;
-      for (var i = 0; i < vm.teams.length; i++) { 
-      vm.teams[i].upVotes = 0;
-      }
+      // for (var i = 0; i < vm.teams.length; i++) { 
+      // vm.teams[i].upVotes = 0;
+      // }
     }
 
 
 
     function upVote(team) {
-      team.upVotes++;
+      // team.upVotes++;
+      return TeamFactory.upvoteIncrement(team)
     }
 
 
