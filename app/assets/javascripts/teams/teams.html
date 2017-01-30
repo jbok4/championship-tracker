@@ -11,7 +11,7 @@
 
     <table class="table">
 
-      <tr ng-repeat="team in vm.teams | orderBy : 'name' | filter: search">
+      <tr ng-repeat="team in vm.teams | orderBy : '-upvote' | filter: search">
           <td class="image-small">
             <img ng-src="{{ team.logo }}" alt="{{ team.name }}">
           </td>
