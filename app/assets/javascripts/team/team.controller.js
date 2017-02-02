@@ -41,14 +41,14 @@
       });
     }
 
-  //   function incrementUpvotes(){
-  //     return TeamFactory.upvoteTeam(vm.team.id);
-  //   };
-
   }
+
+
 
   angular
     .module('app')
     .controller('TeamController', TeamController)
 
+
 }());
+

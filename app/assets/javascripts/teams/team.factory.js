@@ -66,29 +66,12 @@
               .catch(handleError)
     }
 
-    // function upvoteIncrement(team) {
-    //       var req = {
-    //         method: 'PUT',
-    //         url: '/teams/${team_id}',
-    //         headers: {
-    //           'Content-Type': 'application/json'
-    //         },
-    //         data: {
-    //           team: team
-    //         }
-    //       };
-    //       return $http(req)
-    //             .catch(handleError)
-    //   }
-
     function upvoteTeam(team){
       return $http.put('/teams/' + team.id + '/upvote.json')
         .success(function(data){
           team.upvote += 1;
         });
     };
-
-
 
 
       function handleResponse(response) {
