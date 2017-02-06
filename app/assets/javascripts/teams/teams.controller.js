@@ -8,7 +8,7 @@
     vm.getTeams = getTeams;
     vm.createTeam = createTeam;
     vm.upVote = upVote;
-    // vm.addTeam = addTeam
+    // vm.sortByUpvote = sortByUpvote;
 
     
     // instantiated info
@@ -33,20 +33,16 @@
 
 
     function setTeams(data) {
-      // vm.teamForm.$setPristine();
-      // vm.teamForm.$setUntouched();
-      // vm.team = {};
       vm.teams = data;
-      // for (var i = 0; i < vm.teams.length; i++) { 
-      // vm.teams[i].upVotes = 0;
-      // }
+      data.sort(function(a, b) {
+        return b.upvote - a.upvote;
+    });
+      return data;
     }
 
-
-
     function upVote(team) {
-      // team.upVotes++;
       return TeamFactory.upvoteTeam(team)
+                        .then(getTeams)
     }
 
 
