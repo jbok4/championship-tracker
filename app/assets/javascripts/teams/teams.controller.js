@@ -8,9 +8,7 @@
     vm.getTeams = getTeams;
     vm.createTeam = createTeam;
     vm.upVote = upVote;
-    // vm.sortByUpvote = sortByUpvote;
-
-    
+ 
     // instantiated info
     activate();
 
