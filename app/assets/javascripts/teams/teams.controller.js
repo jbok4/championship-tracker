@@ -28,8 +28,8 @@
       return TeamFactory.createTeam(vm.newTeam)
                 .then(function() {
                   vm.newTeam = {}
-                  vm.newTeam.$setPristine();
-                  vm.newTeam.$setUntouched();
+                  // vm.newTeam.$setPristine();
+                  // vm.newTeam.$setUntouched();
 
                 })
                 .then(getTeams)
