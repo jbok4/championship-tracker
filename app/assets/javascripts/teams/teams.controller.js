@@ -26,23 +26,26 @@
 
     function createTeam() {
       return TeamFactory.createTeam(vm.newTeam)
+                .then(function() {
+                  vm.newTeam = {}
+                  vm.newTeam.$setPristine();
+                  vm.newTeam.$setUntouched();
+
+                })
                 .then(getTeams)
     }
 
 
     function setTeams(data) {
-      vm.teams = data;
-      data.sort(function(a, b) {
+      vm.teams = data.sort(function(a, b) {
         return b.upvote - a.upvote;
-    });
-      return data;
+      });
     }
 
     function upVote(team) {
       return TeamFactory.upvoteTeam(team)
                         .then(getTeams)
     }
-
 
   };
   
