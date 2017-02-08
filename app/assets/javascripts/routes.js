@@ -27,6 +27,16 @@
                         }
                     }
                 })
+                .state('home.listAwards', {
+                    url: 'awards/:year',
+                    templateUrl: 'teams/awards.html',
+                    controller: 'TeamsController as vm',
+                    resolve: {
+                        team: function($http) {
+                          return $http.get('/teams/');
+                        }
+                    }
+                })
                 .state('home.about', {
                     url: 'about',
                     templateUrl: 'about/about.html',
