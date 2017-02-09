@@ -9,12 +9,16 @@
     <p>{{ vm.team.location }} | {{ vm.team.sport }}</p>
   </div>
 
-<!--   <div class="col-md-4" ng-repeat='gameentry in vm.sportsFeed'>
-    <h2>Today's Schedule</h2>
-    <p>{{ game.awayTeam.name }} at {{ game.homeTeam.name }}, {{ gameentry.location }}</p>
-  </div> -->
+  <div class="col-md-4" >
+      <h2>Today's Schedule</h2>
+    <!-- <div ng-show="vm.team.sport == 'Hockey'" ng-repeat='sport in vm.sportsFeed'> -->
+    <div ng-repeat='sport in vm.sportsFeed'>
+
+      <p>{{ sport.awayTeam.Name }} at {{ sport.homeTeam.Name }}, {{ sport.location }}</p>
+    </div>
 
 
+  </div>
 </div>
 
 

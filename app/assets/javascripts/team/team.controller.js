@@ -45,9 +45,9 @@
     }
 
     function setSportsFeed(data) {
-      vm.sportsFeed = data
-      return vm.sportsFeed["dailygameschedule"]['gameentry']
-      // console.log(vm.sportsFeed["dailygameschedule"]['gameentry'])
+      vm.sportsFeed = data["dailygameschedule"]['gameentry']
+      return vm.sportsFeed
+      // console.log(vm.sportsFeed)
     }
 
     function setAwards(data) {
