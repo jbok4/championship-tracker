@@ -9,7 +9,8 @@
         createTeam: createTeam,
         createAward: createAward,
         upvoteTeam: upvoteTeam,
-        getSportsFeed: getSportsFeed
+        getSportsFeed: getSportsFeed,
+        getBaseballFeed: getBaseballFeed
       }
 
       function getTeams() {
@@ -79,6 +80,26 @@
         var password = 'mysports420'
         var url = 'https://www.mysportsfeeds.com/api/feed/pull/nhl/2015-2016-regular/daily_game_schedule.json?fordate=20151009&'
         // var url = 'https://www.mysportsfeeds.com/api/feed/sample/pull/nhl/2015-2016-regular/daily_game_schedule.json?fordate=20151009&'
+        var req = {
+          method: 'GET',
+          url: url,
+          async: false,
+          headers: {
+             "Authorization": "Basic " + btoa(username + ":" + password),
+            'Content-Type': 'application/json'
+          }
+        }
+
+      return $http(req)                  
+                  .then(handleResponse)
+                  .catch(handleError)
+
+    }
+
+    function getBaseballFeed() {   
+        var username = 'jbok4'
+        var password = 'mysports420'
+        var url = 'https://www.mysportsfeeds.com/api/feed/pull/mlb/2016-regular/overall_team_standings.json?teamstats=W,L,RF,RA'
         var req = {
           method: 'GET',
           url: url,

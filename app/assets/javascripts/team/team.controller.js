@@ -11,6 +11,7 @@
     vm.createAward = createAward;
     vm.addAward = addAward;
     vm.getSportsFeed = getSportsFeed;
+    vm.getBaseballFeed = getBaseballFeed;
     
 
     // Instantiated info:
@@ -20,6 +21,7 @@
     function activate() {
       getAwards()
       getSportsFeed()
+      getBaseballFeed()
     }
 
     function getAwards() {
@@ -48,6 +50,17 @@
       vm.sportsFeed = data["dailygameschedule"]['gameentry']
       return vm.sportsFeed
       // console.log(vm.sportsFeed)
+    }
+
+    function getBaseballFeed() {
+      return TeamFactory.getBaseballFeed()
+                        .then(setBaseballFeed)
+    }
+
+    function setBaseballFeed(data) {
+      vm.baseballFeed = data["overallteamstandings"]["teamstandingsentry"]
+      return vm.baseballFeed
+      // console.log(vm.baseballFeed)
     }
 
     function setAwards(data) {
