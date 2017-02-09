@@ -74,19 +74,22 @@
         });
     };
 
-    function getSportsFeed() {   
+    function getSportsFeed(feed) {   
         var username = 'jbok4'
         var password = 'mysports420'
-        var url = 'https://www.mysportsfeeds.com/api/feed/pull/nhl/2015-2016-regular/daily_game_schedule.json?fordate=20151009&'
-
+        // var url = 'https://www.mysportsfeeds.com/api/feed/pull/nhl/2015-2016-regular/daily_game_schedule.json?fordate=20151009&'
+        var url = 'https://www.mysportsfeeds.com/api/feed/sample/pull/nhl/2015-2016-regular/daily_game_schedule.json?fordate=20151009&'
         var req = {
           method: 'GET',
           url: url,
           async: false,
           headers: {
-             "Authorization": "Basic " + btoa({username} + ":" + {password}),
+             // "Authorization": "Basic " + btoa({username} + ":" + {password}),
             'Content-Type': 'application/json'
-          }
+          },
+          data: {
+          feed: feed
+        }
         }
 
       return $http(req)
