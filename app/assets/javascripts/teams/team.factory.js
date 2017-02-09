@@ -8,7 +8,8 @@
         getAwards: getAwards,
         createTeam: createTeam,
         createAward: createAward,
-        upvoteTeam: upvoteTeam
+        upvoteTeam: upvoteTeam,
+        getSportsFeed: getSportsFeed
       }
 
       function getTeams() {
@@ -72,6 +73,17 @@
           team.upvote += 1;
         });
     };
+
+    function getSportsFeed() {
+        var username = 'jbok4'
+        var password = 'mysports420'
+        var url = 'https://www.mysportsfeeds.com/api/feed/pull/nhl/2015-2016-regular/daily_game_schedule.json?fordate=20151009&'
+        // Authorization: Basic {username + ":" + password}
+        return $http.get(url,(username + ":" + password))
+                    .then(handleResponse)
+                    .catch(handleError);
+
+    }
 
 
       function handleResponse(response) {

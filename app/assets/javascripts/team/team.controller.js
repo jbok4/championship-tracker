@@ -10,6 +10,7 @@
     // Callable methods on the vm:
     vm.createAward = createAward;
     vm.addAward = addAward;
+    vm.getSportsFeed = getSportsFeed;
     
 
     // Instantiated info:
@@ -18,6 +19,7 @@
     // Defined methods:
     function activate() {
       getAwards()
+      getSportsFeed()
     }
 
     function getAwards() {
@@ -37,12 +39,23 @@
       return vm.awards.push(data);
     }
 
+    function getSportsFeed() {
+      return TeamFactory.getSportsFeed()
+                        .then(setSportsFeed)
+    }
+
+    function setSportsFeed(data) {
+      vm.sportsFeed = data
+      // return vm.sportsFeed
+      // console.log(vm.sportsFeed.gameentry)
+      console.log(vm.sportsFeed)
+    }
+
     function setAwards(data) {
       return vm.awards = data.filter(function(award) {
         return (award.team_id == vm.team.id)
       });
     }
-
 
 
   }

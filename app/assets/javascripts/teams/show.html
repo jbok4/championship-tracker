@@ -1,13 +1,26 @@
 <a href="#" ui-sref="home.showTeam({ id: team.id })"></a> 
-<div class="image-size col-md-4">
-    <img ng-src="{{ vm.team.logo }}" alt="{{ vm.team.name }} Logo" />
+<div class="row">
+  <div class="image-size col-md-4">
+      <img ng-src="{{ vm.team.logo }}" alt="{{ vm.team.name }} Logo" />
+    </div>
+
+  <div class="col-md-4">
+    <h2>{{ vm.team.name | uppercase }}</h2>
+    <p>{{ vm.team.location }} | {{ vm.team.sport }}</p>
   </div>
 
-<div class="col-md-8">
-  <h2>{{ vm.team.name | uppercase }}</h2>
-  <p>{{ vm.team.location }} | {{ vm.team.sport }}</p>
+<!--   <div class="col-md-4" ng-repeat='gameentry in vm.sportsFeed'>
+    <h2>Today's Schedule</h2>
+    <p>{{ game.awayTeam.name }} at {{ game.homeTeam.name }}, {{ gameentry.location }}</p>
+  </div> -->
+
+
 </div>
 
-<awards awards="vm.awards"></awards>
 
-<create-award></create-award>
+
+<div class="col-xs-12">
+  <awards awards="vm.awards"></awards>
+
+  <create-award></create-award>
+</div>
