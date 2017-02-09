@@ -74,14 +74,24 @@
         });
     };
 
-    function getSportsFeed() {
+    function getSportsFeed() {   
         var username = 'jbok4'
         var password = 'mysports420'
         var url = 'https://www.mysportsfeeds.com/api/feed/pull/nhl/2015-2016-regular/daily_game_schedule.json?fordate=20151009&'
-        // Authorization: Basic {username + ":" + password}
-        return $http.get(url,(username + ":" + password))
-                    .then(handleResponse)
-                    .catch(handleError);
+
+        var req = {
+          method: 'GET',
+          url: url,
+          async: false,
+          headers: {
+             "Authorization": "Basic " + btoa({username} + ":" + {password}),
+            'Content-Type': 'application/json'
+          }
+        }
+
+      return $http(req)
+                  .then(handleResponse)
+                  .catch(handleError)
 
     }
 
