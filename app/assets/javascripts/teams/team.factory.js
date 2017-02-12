@@ -10,7 +10,7 @@
         createAward: createAward,
         upvoteTeam: upvoteTeam,
         getSportsFeed: getSportsFeed,
-        getBaseballFeed: getBaseballFeed
+        getBaseballFeed: getBaseballFeed,
       }
 
       function getTeams() {
@@ -78,8 +78,8 @@
     function getSportsFeed() {   
         var username = 'jbok4'
         var password = 'mysports420'
-        var url = 'https://www.mysportsfeeds.com/api/feed/pull/nhl/2015-2016-regular/daily_game_schedule.json?fordate=20151009&'
-        // var url = 'https://www.mysportsfeeds.com/api/feed/sample/pull/nhl/2015-2016-regular/daily_game_schedule.json?fordate=20151009&'
+        var date = new Date()
+        var url = 'https://www.mysportsfeeds.com/api/feed/pull/nhl/2016-2017-regular/daily_game_schedule.json?fordate=' + date +'&'
         var req = {
           method: 'GET',
           url: url,
