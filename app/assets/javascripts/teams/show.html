@@ -27,7 +27,7 @@
   <div class="col-md-3"  ng-show="vm.team.sport == 'Baseball'" >
     <p><strong>2016 Final Team Standings</strong></p>
     <div ng-repeat='mlbteam in vm.baseballFeed'>
-      <p>{{ mlbteam.rank }}. {{ mlbteam.team.Name }}</p>
+      <p>{{ mlbteam.rank }}. {{ mlbteam.team.City }} {{ mlbteam.team.Name }}</p>
     </div>
   </div>
 
@@ -41,14 +41,14 @@
   <div class="col-md-3"  ng-show="vm.team.sport == 'Hockey'" >
     <p><strong>Today's Schedule</strong></p>
     <div ng-repeat='nhlteam in vm.hockeyFeed'>
-      <p>{{ nhlteam.awayTeam.Name }} at {{ nhlteam.homeTeam.Name }},</br>{{ nhlteam.location }}</p>
+      <p><strong>{{ nhlteam.awayTeam.Name }} at {{ nhlteam.homeTeam.Name }}</strong></br>{{ nhlteam.location }}</p>
     </div>
   </div>
 
   <div class="col-md-3"  ng-show="vm.team.sport == 'Basketball' || vm.team.sport == 'Soccer'" >
     <p><strong>Today's Schedule</strong></p>
     <div ng-repeat='sport in vm.sportsFeed'>
-      <p>{{ sport.awayTeam.Name }} at {{ sport.homeTeam.Name }},</br>{{ sport.location }}</p>
+      <p><strong>{{ sport.awayTeam.Name }} at {{ sport.homeTeam.Name }}</strong></br>{{ sport.location }}</p>
     </div>
   </div>
 

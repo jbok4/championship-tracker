@@ -24,4 +24,9 @@ This app uses 'rails', '~> 5.0.1' and angular
 
 Championship Tracker is like a wikipedia version (where anyone can update and add information) of Sports Teams Awards Tracking. You can add your favorite team, and / or add their latest (or an old) award that they won, plus a description about it. 
 
+Additional Details that have been added are
+UpVoting of Teams! You can now vote for your favorite team and watch as your team moves up to the top of the list. 
+
+MySportsFeeds.com API Pull Requests for daily game schedules, as well as final standings (for leagues currently in the off-season).
+
 Help get the information out into the world, about your favorite pastime and your favorite teams' achievements!
