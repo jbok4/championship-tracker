@@ -78,7 +78,11 @@
     function getSportsFeed() {   
         var username = 'jbok4'
         var password = 'mysports420'
-        var date = new Date()
+        var d = new Date();
+        var year = d.getFullYear();
+        var month = d.getMonth();
+        var day = d.getDate();
+        var date = (year + '0' + month + day).toString()
         var url = 'https://www.mysportsfeeds.com/api/feed/pull/nhl/2016-2017-regular/daily_game_schedule.json?fordate=' + date +'&'
         var req = {
           method: 'GET',
