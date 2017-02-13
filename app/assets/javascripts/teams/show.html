@@ -1,13 +1,56 @@
-<a href="#" ui-sref="home.showTeam({ id: team.id })"></a> 
-<div class="image-size col-md-4">
-    <img ng-src="{{ vm.team.logo }}" alt="{{ vm.team.name }} Logo" />
-  </div>
+<div class="row">
 
-<div class="col-md-8">
-  <h2>{{ vm.team.name | uppercase }}</h2>
-  <p>{{ vm.team.location }} | {{ vm.team.sport }}</p>
+  <a href="#" ui-sref="home.showTeam({ id: team.id })"></a> 
+
+    <div class="image-size col-md-4">
+        <img ng-src="{{ vm.team.logo }}" alt="{{ vm.team.name }} Logo" />
+      </div>
+
+    <div class="col-md-4">
+      <h2>{{ vm.team.name | uppercase }}</h2>
+      <p>{{ vm.team.location }} | {{ vm.team.sport }}</p>
+    </div>
+
+
+
+
+
 </div>
 
-<awards awards="vm.awards"></awards>
+<div class="row">
+  <div class="col-md-9">
+    <awards awards="vm.awards"></awards>
 
-<create-award></create-award>
+    <create-award></create-award>
+  </div>
+
+  <div class="col-md-3"  ng-show="vm.team.sport == 'Baseball'" >
+    <p><strong>2016 Final Team Standings</strong></p>
+    <div ng-repeat='mlbteam in vm.baseballFeed'>
+      <p>{{ mlbteam.rank }}. {{ mlbteam.team.Name }}</p>
+    </div>
+  </div>
+
+    <div class="col-md-3"  ng-show="vm.team.sport == 'Football'" >
+    <p><strong>2016-2017 Final Team Standings</strong></p>
+    <div ng-repeat='nflteam in vm.footballFeed'>
+      <p>{{ nflteam.rank }}. {{ nflteam.team.City }} {{ nflteam.team.Name }}</p>
+    </div>
+  </div>
+
+  <div class="col-md-3"  ng-show="vm.team.sport == 'Hockey'" >
+    <p><strong>Today's Schedule</strong></p>
+    <div ng-repeat='nhlteam in vm.hockeyFeed'>
+      <p>{{ nhlteam.awayTeam.Name }} at {{ nhlteam.homeTeam.Name }},</br>{{ nhlteam.location }}</p>
+    </div>
+  </div>
+
+  <div class="col-md-3"  ng-show="vm.team.sport == 'Basketball' || 'Soccer'" >
+    <p><strong>Today's Schedule</strong></p>
+    <div ng-repeat='sport in vm.sportsFeed'>
+      <p>{{ sport.awayTeam.Name }} at {{ sport.homeTeam.Name }},</br>{{ sport.location }}</p>
+    </div>
+  </div>
+
+</div>
+

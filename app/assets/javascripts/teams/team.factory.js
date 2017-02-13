@@ -9,8 +9,10 @@
         createTeam: createTeam,
         createAward: createAward,
         upvoteTeam: upvoteTeam,
+        getHockeyFeed: getHockeyFeed,
         getSportsFeed: getSportsFeed,
         getBaseballFeed: getBaseballFeed,
+        getFootballFeed: getFootballFeed
       }
 
       function getTeams() {
@@ -75,11 +77,16 @@
         });
     };
 
-    function getSportsFeed() {   
+    function getHockeyFeed() {   
         var username = 'jbok4'
         var password = 'mysports420'
-        // var date = moment().format('YYYYMMDD')
-        var url = 'https://www.mysportsfeeds.com/api/feed/pull/nhl/2016-2017-regular/daily_game_schedule.json?fordate=20170210&'
+        var d = new Date();
+        var year = d.getFullYear();
+        var month = d.getMonth();
+        var day = d.getDate();
+        var date = (year + '0' + month + day).toString()
+        var url = 'https://www.mysportsfeeds.com/api/feed/pull/nhl/2016-2017-regular/daily_game_schedule.json?fordate=' + date +'&'
+
         var req = {
           method: 'GET',
           url: url,
@@ -89,6 +96,7 @@
             'Content-Type': 'application/json'
           }
         }
+
       return $http(req)                  
                   .then(handleResponse)
                   .catch(handleError)
@@ -99,6 +107,51 @@
         var username = 'jbok4'
         var password = 'mysports420'
         var url = 'https://www.mysportsfeeds.com/api/feed/pull/mlb/2016-regular/overall_team_standings.json?teamstats=W,L,RF,RA'
+        var req = {
+          method: 'GET',
+          url: url,
+          async: false,
+          headers: {
+             "Authorization": "Basic " + btoa(username + ":" + password),
+            'Content-Type': 'application/json'
+          }
+        }
+
+      return $http(req)                  
+                  .then(handleResponse)
+                  .catch(handleError)
+
+    }
+
+      function getFootballFeed() {   
+        var username = 'jbok4'
+        var password = 'mysports420'
+        var url = 'https://www.mysportsfeeds.com/api/feed/pull/nfl/2016-2017-regular/overall_team_standings.json?'
+        var req = {
+          method: 'GET',
+          url: url,
+          async: false,
+          headers: {
+             "Authorization": "Basic " + btoa(username + ":" + password),
+            'Content-Type': 'application/json'
+          }
+        }
+
+      return $http(req)                  
+                  .then(handleResponse)
+                  .catch(handleError)
+
+    }
+
+      function getSportsFeed() {   
+        var username = 'jbok4'
+        var password = 'mysports420'
+        var d = new Date();
+        var year = d.getFullYear();
+        var month = d.getMonth();
+        var day = d.getDate();
+        var date = (year + '0' + month + day).toString()
+        var url = 'https://www.mysportsfeeds.com/api/feed/pull/nba/2016-2017-regular/daily_game_schedule.json?fordate=' + date +'&'
         var req = {
           method: 'GET',
           url: url,

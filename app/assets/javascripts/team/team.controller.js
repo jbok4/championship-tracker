@@ -10,6 +10,9 @@
     // Callable methods on the vm:
     vm.createAward = createAward;
     vm.addAward = addAward;
+    vm.getSportsFeed = getSportsFeed;
+    vm.getBaseballFeed = getBaseballFeed;
+    vm.getFootballFeed = getFootballFeed;
     
 
     // Instantiated info:
@@ -18,6 +21,10 @@
     // Defined methods:
     function activate() {
       getAwards()
+      getSportsFeed()
+      getBaseballFeed()
+      getFootballFeed()
+      getHockeyFeed()
     }
 
     function getAwards() {
@@ -37,12 +44,53 @@
       return vm.awards.push(data);
     }
 
+    function getSportsFeed() {
+      return TeamFactory.getSportsFeed()
+                        .then(setSportsFeed)
+    }
+
+    function setSportsFeed(data) {
+      vm.sportsFeed = data["dailygameschedule"]['gameentry']
+      return vm.sportsFeed
+      // console.log(vm.sportsFeed)
+    }
+
+    function getHockeyFeed() {
+      return TeamFactory.getHockeyFeed()
+                        .then(setHockeyFeed)
+    }
+
+    function setHockeyFeed(data) {
+      vm.hockeyFeed = data["dailygameschedule"]['gameentry']
+      return vm.hockeyFeed
+    }
+
+    function getBaseballFeed() {
+      return TeamFactory.getBaseballFeed()
+                        .then(setBaseballFeed)
+    }
+
+    function setBaseballFeed(data) {
+      vm.baseballFeed = data["overallteamstandings"]["teamstandingsentry"]
+      return vm.baseballFeed
+    }
+
+    function getFootballFeed() {
+      return TeamFactory.getFootballFeed()
+                        .then(setFootballFeed)
+    }
+
+    function setFootballFeed(data) {
+      vm.footballFeed = data["overallteamstandings"]["teamstandingsentry"]
+      return vm.footballFeed
+      // console.log(vm.footballFeed)
+    }
+
     function setAwards(data) {
       return vm.awards = data.filter(function(award) {
         return (award.team_id == vm.team.id)
       });
     }
-
 
 
   }
