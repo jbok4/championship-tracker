@@ -40,11 +40,17 @@
 
   <div class="col-md-3"  ng-show="vm.team.sport == 'Hockey'" >
     <p><strong>Today's Schedule</strong></p>
-    <div ng-repeat='sport in vm.sportsFeed'>
+    <div ng-repeat='nhlteam in vm.hockeyFeed'>
+      <p>{{ nhlteam.awayTeam.Name }} at {{ nhlteam.homeTeam.Name }},</br>{{ nhlteam.location }}</p>
+    </div>
+  </div>
 
+  <div class="col-md-3"  ng-show="vm.team.sport == 'Basketball' || 'Soccer'" >
+    <p><strong>Today's Schedule</strong></p>
+    <div ng-repeat='sport in vm.sportsFeed'>
       <p>{{ sport.awayTeam.Name }} at {{ sport.homeTeam.Name }},</br>{{ sport.location }}</p>
     </div>
-
   </div>
+
 </div>
 

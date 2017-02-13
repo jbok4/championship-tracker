@@ -24,6 +24,7 @@
       getSportsFeed()
       getBaseballFeed()
       getFootballFeed()
+      getHockeyFeed()
     }
 
     function getAwards() {
@@ -54,6 +55,16 @@
       // console.log(vm.sportsFeed)
     }
 
+    function getHockeyFeed() {
+      return TeamFactory.getHockeyFeed()
+                        .then(setHockeyFeed)
+    }
+
+    function setHockeyFeed(data) {
+      vm.hockeyFeed = data["dailygameschedule"]['gameentry']
+      return vm.hockeyFeed
+    }
+
     function getBaseballFeed() {
       return TeamFactory.getBaseballFeed()
                         .then(setBaseballFeed)
@@ -62,7 +73,6 @@
     function setBaseballFeed(data) {
       vm.baseballFeed = data["overallteamstandings"]["teamstandingsentry"]
       return vm.baseballFeed
-      // console.log(vm.baseballFeed)
     }
 
     function getFootballFeed() {
