@@ -1,15 +1,16 @@
 <div class="col-md-3 well well-sm"  ng-show="vm.team.sport == 'Baseball'" >
     <p><strong>2016 Final Team Standings</strong></p>
     <div ng-repeat='mlbteam in vm.baseballFeed'>
-      <p>{{ mlbteam.rank }}. {{ mlbteam.team.City }} {{ mlbteam.team.Name }}<br> 
-        <!-- {{ mlbteam.stats.Wins }} - {{ mlbteam.stats.Losses }}</p> -->
+      <p>{{ mlbteam.rank }}. <strong>{{ mlbteam.team.City }} {{ mlbteam.team.Name }}</strong><br>
+        Wins: {{ mlbteam.stats.Wins['#text'] }} - Losses: {{ mlbteam.stats.Losses['#text'] }}</p>
     </div>
   </div>
 
     <div class="col-md-3 well well-sm"  ng-show="vm.team.sport == 'Football'" >
     <p><strong>2016-2017 Final Team Standings</strong></p>
     <div ng-repeat='nflteam in vm.footballFeed'>
-      <p>{{ nflteam.rank }}. {{ nflteam.team.City }} {{ nflteam.team.Name }}</p>
+      <p>{{ nflteam.rank }}. {{ nflteam.team.City }} {{ nflteam.team.Name }}<br>
+        Wins: {{ nflteam.stats.Wins['#text'] }} - Losses: {{ nflteam.stats.Losses['#text'] }}</p>
     </div>
   </div>
 
