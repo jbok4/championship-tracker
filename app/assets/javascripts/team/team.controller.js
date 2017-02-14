@@ -51,8 +51,6 @@
 
     function setSportsFeed(data) {
       vm.sportsFeed = data["dailygameschedule"]['gameentry']
-      return vm.sportsFeed
-      // console.log(vm.sportsFeed)
     }
 
     function getHockeyFeed() {
@@ -62,7 +60,6 @@
 
     function setHockeyFeed(data) {
       vm.hockeyFeed = data["dailygameschedule"]['gameentry']
-      return vm.hockeyFeed
     }
 
     function getBaseballFeed() {
@@ -72,7 +69,8 @@
 
     function setBaseballFeed(data) {
       vm.baseballFeed = data["overallteamstandings"]["teamstandingsentry"]
-      return vm.baseballFeed
+      // console.log(vm.baseballFeed[0].stats.Wins)
+      // console.log(vm.baseballFeed[0].stats.Losses)
     }
 
     function getFootballFeed() {
@@ -82,8 +80,6 @@
 
     function setFootballFeed(data) {
       vm.footballFeed = data["overallteamstandings"]["teamstandingsentry"]
-      return vm.footballFeed
-      // console.log(vm.footballFeed)
     }
 
     function setAwards(data) {
